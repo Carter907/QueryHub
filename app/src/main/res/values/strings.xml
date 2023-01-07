@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Query Hub</string>
+    <string name="title_screen_title">Query Hub</string>
+    <string name="title_screen_button_text">continue</string>
+    <string name="home_title">Query Home</string>
+    <string name="add_question_text">add to quiz</string>
+</resources>
