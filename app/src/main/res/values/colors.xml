@@ -10,5 +10,6 @@
     <color name="quiz_element_background_color">#505050</color>
     <color name="question_recycler_background">#3C393939</color>
     <color name="question_element_background">#601B1B1B</color>
+    <color name="button_color">#81D3C0</color>
 
 </resources>
