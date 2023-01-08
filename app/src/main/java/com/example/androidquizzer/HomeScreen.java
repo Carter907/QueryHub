@@ -1,7 +1,5 @@
 package com.example.androidquizzer;
 
-import static androidx.core.os.LocaleListCompat.create;
-
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,15 +10,10 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.RoomDatabase;
 
 
 import com.example.androidquizzer.databinding.AddQuizBinding;
 import com.example.androidquizzer.databinding.HomeScreenBinding;
-
-import java.util.LinkedHashSet;
-import java.util.Set;
-import java.util.function.Function;
 
 public class HomeScreen extends Fragment {
 

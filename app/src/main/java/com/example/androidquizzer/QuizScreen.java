@@ -4,12 +4,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -19,12 +18,6 @@ import com.example.androidquizzer.databinding.QuizScreenBinding;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ForkJoinPool;
-import java.util.concurrent.ForkJoinTask;
-import java.util.concurrent.FutureTask;
-import java.util.concurrent.RecursiveTask;
 
 public class QuizScreen extends Fragment {
 
@@ -69,6 +62,7 @@ public class QuizScreen extends Fragment {
 
 
         FloatingActionButton button = quizScreenBinding.addQuestionAndAnswer;
+        Button startQuizButton = quizScreenBinding.startQuizButton;
         QuizDatabase db = QuizDatabase.Vendor.INSTANCE.getDb(getActivity().getApplicationContext());
 
         QuizDao dao = db.getDao();
@@ -91,6 +85,17 @@ public class QuizScreen extends Fragment {
 
 
 
+        QueryScreen queryScreenFragment = new QueryScreen(quiz);
+
+        startQuizButton.setOnClickListener(e -> {
+
+            getActivity().getSupportFragmentManager().beginTransaction()
+                    .setReorderingAllowed(true)
+                    .replace(R.id.screen_fragment, queryScreenFragment)
+                    .addToBackStack(null)
+                    .commit();
+
+        });
 
 
         button.setOnClickListener(e -> {
